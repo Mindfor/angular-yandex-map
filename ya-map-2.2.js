@@ -240,7 +240,7 @@ angular.module('yaMap', []).
     			yaType: '@',
     			yaBeforeInit: '&',
     			yaAfterInit: '&',
-    			yaErrorLoad: '&'
+    			yaError: '&'
     		},
     		compile: function (tElement) {
     			tElement.attr('style', 'display:block;height:100%;width:100%;');
@@ -353,7 +353,7 @@ angular.module('yaMap', []).
     								});
     							});
     						} else {
-    							scope.yaErrorLoad({ $target: "error load map" });
+    							scope.yaError({ $target: "error load map" });
     						}
     					});
     					return deferred.promise;
@@ -692,7 +692,7 @@ angular.module('yaMap', []).
     		restrict: 'EA',
     		scope: {
     			yaAfterInit: '&',
-				yaErrorLoad: "&"
+				yaError: "&"
     		},
     		link: function (scope, elm, attrs) {
     			var options = attrs.yaOptions ? scope.$eval(attrs.yaOptions) : {};
@@ -709,7 +709,7 @@ angular.module('yaMap', []).
 				    	}
 				    	scope.yaAfterInit({ $target: obj });
 				    } else {
-				    	scope.yaErrorLoad({ $target: "error load map" });
+				    	scope.yaError({ $target: "error load map" });
 				    }
     			});
     		}
