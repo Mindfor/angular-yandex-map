@@ -77,7 +77,7 @@ angular.module('yaMap', []).
    			callback[0](isSuccess);
    		}
    	};
-   	var loadUrl = '//maps.yandex.ru/' + yaMapSettings.version + '/?load=package.full&lang=' +
+   	var loadUrl = '//api-maps.yandex.ru/' + yaMapSettings.version + '/?load=package.full&lang=' +
 		yaMapSettings.lang + '&coordorder=' + yaMapSettings.order;
    	var _loading = false;
    	var loadScript = function (url, callback) {
