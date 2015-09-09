@@ -110,7 +110,8 @@ angular.module('yaMap', []).
    	return function (callback) {
    		callbacks.push(callback);
    		if (loaded) {
-   			runCallbacks();
+            var isSuccess = typeof ymaps != "undefined";
+   			runCallbacks(isSuccess);
    		} else if (!_loading) {
    			loadScript(loadUrl, function () {
 				var isSuccess = typeof ymaps != "undefined";
